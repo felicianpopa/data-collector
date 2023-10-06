@@ -48,6 +48,12 @@ const DataCollector = () => {
 
   return (
     <div className="data-collector">
+      {isLoading && (
+        <dib className="loader">
+          <h2>Loading...</h2>
+        </dib>
+      )}
+
       <h2>{currentStepData.stepTitle}</h2>
       {currentStepData?.stepData?.dataType === "select" && (
         <SelectComponent {...currentStepData.stepData} />
