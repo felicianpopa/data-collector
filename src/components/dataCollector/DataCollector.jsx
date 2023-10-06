@@ -44,7 +44,6 @@ const DataCollector = () => {
 
   const submitData = () => {
     console.warn("The output is ", output);
-    dispatch(loadNextStep("initialStep"));
   };
 
   return (
