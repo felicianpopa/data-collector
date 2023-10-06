@@ -1,5 +1,49 @@
 {"input": [
-
+    {
+        "step": "initialStep",
+        "stepTitle": "Do you already own a building ?",
+        "stepData": {
+            "dataName": "buildingOwner",
+            "dataType": "select",
+            "dataValues": [{
+                "label": "yes",
+                "value": "isBuildingOwner"
+            },{
+                "label": "no",
+                "value": "isNotBuildingOwner"
+            }]
+        }
+    },
+    {
+        "step": "isBuildingOwner",
+        "stepTitle": "What type of building do you own ?",
+        "stepData": {
+            "dataName": "buildingOwner",
+            "dataType": "select",
+            "dataValues": [{
+                "label": "Apartment",
+                "value": "apartmentOwner"
+            },{
+                "label": "house",
+                "value": "houseOwner"
+            }]
+        }
+    },
+    {
+        "step": "isNotBuildingOwner",
+        "stepTitle": "Do you already own a land ?",
+        "stepData": {
+            "dataName": "landOwner",
+            "dataType": "select",
+            "dataValues": [{
+                "label": "yes",
+                "value": "isLandOwner"
+            },{
+                "label": "no",
+                "value": "isNotLandOwner"
+            }]
+        }
+    }
 ],
 "output": [
 
