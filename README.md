@@ -8,3 +8,5 @@
 
 **Json Server documentation:**
 https://www.npmjs.com/package/json-server
+
+**After clicking on submit data you will get a consone.warn with the collected data**
