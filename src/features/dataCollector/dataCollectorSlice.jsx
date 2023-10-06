@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   input: [],
+  stepHistory: [],
   currentStep: "initialStep",
   currentStepData: {},
   output: [],
@@ -23,10 +24,24 @@ const dataCollectorSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    changeCurrentStep: (state, { payload }) => {
+    loadPrevStep: (state) => {
+      const prevStep = state.stepHistory.at(-1);
+      const updatedStepHistory = state.stepHistory.slice(0, -1);
+      const updatedOutput = state.output.slice(0, -1);
       return {
         ...state,
-        currentStep: payload,
+        currentStep: prevStep,
+        stepHistory: updatedStepHistory,
+        output: updatedOutput,
+      };
+    },
+    loadNextStep: (state, { payload }) => {
+      const { currentStep, nextStep, stepName, stepValue } = payload;
+      return {
+        ...state,
+        currentStep: nextStep,
+        stepHistory: [...state.stepHistory, currentStep],
+        output: [...state.output, { [stepName]: stepValue }],
       };
     },
   },
@@ -54,6 +69,6 @@ const dataCollectorSlice = createSlice({
   },
 });
 
-export const { changeCurrentStep } = dataCollectorSlice.actions;
+export const { loadNextStep, loadPrevStep } = dataCollectorSlice.actions;
 
 export default dataCollectorSlice.reducer;

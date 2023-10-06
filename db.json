@@ -22,7 +22,7 @@
         "step": "buildingType",
         "stepTitle": "What type of building do you own/want ?",
         "stepData": {
-            "dataName": "buildingOwner",
+            "dataName": "buildingType",
             "dataType": "select",
             "dataValues": [{
                 "label": "Apartment",
@@ -32,17 +32,16 @@
                 "value": "houseOwner"
             }],
             "nextStep": {
-                "isBuildingOwner": "buildingType",
-                "isNotBuildingOwner": "hasLand"
-            },
-            "prevStep": "initialStep"
+                "apartmentOwner": "finalStep" ,
+                "houseOwner": "chooseLandSize"
+            }
         }
     },
     {
         "step": "hasLand",
         "stepTitle": "Do you already own a land ?",
         "stepData": {
-            "dataName": "landOwner",
+            "dataName": "isLandOwner",
             "dataType": "select",
             "dataValues": [{
                 "label": "yes",
@@ -53,21 +52,24 @@
             }],
             "nextStep": {
                 "isLandOwner": "buildingType",
-                "isNotLandOwner": "chooseLand"
-            },
-            "prevStep": "initialStep"
+                "isNotLandOwner": "chooseLandSize"
+            }
         }
     },
     {
-        "step": "chooseLand",
-        "stepTitle": "How big do you want your land to be ?",
+        "step": "chooseLandSize",
+        "stepTitle": "How big is/do you want your land ?",
         "stepData": {
-            "dataName": "landOwner",
+            "dataName": "landSize",
             "dataType": "input",
-            "nextStep": {
-                "isLandOwner": "buildingType",
-                "isNotLandOwner": "chooseLand"
-            }
+            "nextStep": "finalStep"
+        }
+    },
+    {
+        "step": "finalStep",
+        "stepTitle": "Final step",
+        "stepData": {
+            "dataName": "finalStep"
         }
     }
 ],

@@ -1,6 +1,7 @@
 import {
   loadStepData,
-  changeCurrentStep,
+  loadNextStep,
+  loadPrevStep,
 } from "../../features/dataCollector/dataCollectorSlice";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -8,24 +9,42 @@ import { useSelector, useDispatch } from "react-redux";
 import SelectComponent from "../SelectComponent/SelectComponent";
 
 const DataCollector = () => {
-  const { currentStepData, isLoading, currentStep } = useSelector(
-    (store) => store.dataCollector
-  );
+  const { currentStepData, isLoading, currentStep, stepHistory, output } =
+    useSelector((store) => store.dataCollector);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadStepData(currentStep));
   }, [currentStep]);
 
-  const loadPrevStep = () => {
-    dispatch(changeCurrentStep(currentStepData?.stepData?.prevStep));
+  const onLoadPrevStep = () => {
+    dispatch(loadPrevStep());
   };
 
-  const loadNextStep = () => {
+  const onLoadNextStep = () => {
+    const nextStepData = currentStepData?.stepData?.nextStep;
     const stepName = currentStepData?.stepData?.dataName;
-    const nextStepValue = document.getElementById(stepName).value;
-    const nextStep = currentStepData?.stepData?.nextStep[nextStepValue];
+    let nextStep = "";
+    const stepValue = document.getElementById(stepName).value;
+    // check if there is a value
+    if (stepValue.length === 0) {
+      alert("please choose a value");
+      return;
+    }
+    // if we only have one nextStep option
+    if (typeof nextStepData === "string") {
+      nextStep = nextStepData;
+    }
+    // If we have multiple nextStep options
+    else {
+      nextStep = currentStepData?.stepData?.nextStep[stepValue];
+    }
 
-    dispatch(changeCurrentStep(nextStep));
+    dispatch(loadNextStep({ currentStep, nextStep, stepName, stepValue }));
+  };
+
+  const submitData = () => {
+    console.warn("The output is ", output);
+    dispatch(loadNextStep("initialStep"));
   };
 
   return (
@@ -34,16 +53,30 @@ const DataCollector = () => {
       {currentStepData?.stepData?.dataType === "select" && (
         <SelectComponent {...currentStepData.stepData} />
       )}
+      {currentStepData?.stepData?.dataType === "input" && (
+        <input
+          type="text"
+          name={currentStepData?.stepData?.dataName}
+          id={currentStepData?.stepData?.dataName}
+        />
+      )}
       <div className="actions">
-        {currentStepData?.stepData?.prevStep && (
-          <button className="previous" onClick={() => loadPrevStep()}>
+        {stepHistory.length > 0 && (
+          <button className="previous" onClick={() => onLoadPrevStep()}>
             Prev step
           </button>
         )}
+        {currentStepData?.stepData?.nextStep && (
+          <button className="next" onClick={() => onLoadNextStep()}>
+            Next step
+          </button>
+        )}
 
-        <button className="next" onClick={() => loadNextStep()}>
-          Next step
-        </button>
+        {currentStep === "finalStep" && (
+          <button className="next" onClick={() => submitData()}>
+            Submit data
+          </button>
+        )}
       </div>
     </div>
   );
