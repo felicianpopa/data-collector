@@ -22,6 +22,14 @@ export const loadStepData = createAsyncThunk("load Step Data", async (step) => {
 const dataCollectorSlice = createSlice({
   name: "cart",
   initialState,
+  reducers: {
+    changeCurrentStep: (state, { payload }) => {
+      return {
+        ...state,
+        currentStep: payload,
+      };
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(loadStepData.pending, (state) => {
@@ -45,5 +53,7 @@ const dataCollectorSlice = createSlice({
       });
   },
 });
+
+export const { changeCurrentStep } = dataCollectorSlice.actions;
 
 export default dataCollectorSlice.reducer;

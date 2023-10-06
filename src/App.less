@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -39,4 +43,25 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.data-collector {
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 1px 2px 11px 2px rgb(138 141 137 / 86%);
+  select {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 6px;
+  }
+
+  .actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  button {
+    background-color: green;
+  }
 }

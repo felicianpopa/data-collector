@@ -11,12 +11,16 @@
             },{
                 "label": "no",
                 "value": "isNotBuildingOwner"
-            }]
+            }],
+            "nextStep": {
+                "isBuildingOwner": "buildingType",
+                "isNotBuildingOwner": "hasLand"
+            }
         }
     },
     {
-        "step": "isBuildingOwner",
-        "stepTitle": "What type of building do you own ?",
+        "step": "buildingType",
+        "stepTitle": "What type of building do you own/want ?",
         "stepData": {
             "dataName": "buildingOwner",
             "dataType": "select",
@@ -26,11 +30,16 @@
             },{
                 "label": "house",
                 "value": "houseOwner"
-            }]
+            }],
+            "nextStep": {
+                "isBuildingOwner": "buildingType",
+                "isNotBuildingOwner": "hasLand"
+            },
+            "prevStep": "initialStep"
         }
     },
     {
-        "step": "isNotBuildingOwner",
+        "step": "hasLand",
         "stepTitle": "Do you already own a land ?",
         "stepData": {
             "dataName": "landOwner",
@@ -41,7 +50,24 @@
             },{
                 "label": "no",
                 "value": "isNotLandOwner"
-            }]
+            }],
+            "nextStep": {
+                "isLandOwner": "buildingType",
+                "isNotLandOwner": "chooseLand"
+            },
+            "prevStep": "initialStep"
+        }
+    },
+    {
+        "step": "chooseLand",
+        "stepTitle": "How big do you want your land to be ?",
+        "stepData": {
+            "dataName": "landOwner",
+            "dataType": "input",
+            "nextStep": {
+                "isLandOwner": "buildingType",
+                "isNotLandOwner": "chooseLand"
+            }
         }
     }
 ],

@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.less";
 import DataCollector from "./components/dataCollector/DataCollector";
 
 function App() {
