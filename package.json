@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "server": "json-server --watch db.json --port 5000",
+    "server": "json-server --watch ${npm_config_dbname} --port 5000",
     "start-with-server": "concurrently 'npm run dev' 'npm run server'"
   },
   "dependencies": {

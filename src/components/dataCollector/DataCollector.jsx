@@ -49,9 +49,9 @@ const DataCollector = () => {
   return (
     <div className="data-collector">
       {isLoading && (
-        <dib className="loader">
+        <div className="loader">
           <h2>Loading...</h2>
-        </dib>
+        </div>
       )}
 
       <h2>{currentStepData.stepTitle}</h2>

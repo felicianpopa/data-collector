@@ -1,0 +1,173 @@
+{"input": [
+    {
+        "step": "initialStep",
+        "stepTitle": "Ce tip de rama doriti la fereastra ?",
+        "stepData": {
+            "dataName": "ramaFereastra",
+            "dataType": "select",
+            "dataValues": [{
+                "label": "lemn",
+                "value": "ramaLemn"
+            },{
+                "label": "PVC",
+                "value": "ramaPvc"
+            }],
+            "nextStep": {
+                "ramaLemn": "culoareLemn",
+                "ramaPvc": "culoarePvc"
+            }
+        }
+    },
+    {
+        "step": "culoareLemn",
+        "stepTitle": "Va rugam sa alegeti o culoare",
+        "stepData": {
+            "dataName": "culoareLemn",
+            "dataType": "select",
+            "dataValues": [{
+                "label": "mahon",
+                "value": "culoareLemnMahon"
+            },{
+                "label": "cires",
+                "value": "culoareLemnCires"
+            }],
+            "nextStep": {
+                "culoareLemnMahon": "dimensiuniLemnMahon" ,
+                "culoareLemnCires": "dimensiuniLemnCires"
+            }
+        }
+    },
+    {
+        "step": "culoarePvc",
+        "stepTitle": "Va rugam sa alegeti o culoare",
+        "stepData": {
+            "dataName": "culoarePvc",
+            "dataType": "select",
+            "dataValues": [{
+                "label": "alb",
+                "value": "culoarePvcAlb"
+            },{
+                "label": "negru",
+                "value": "culoarePvcNegru"
+            },{
+                "label": "rosu",
+                "value": "culoarePvcRosu"
+            }],
+            "nextStep": {
+                "culoarePvcAlb": "dimensiuniPvcAlb" ,
+                "culoarePvcNegru": "dimensiuniPvcNegru",
+                "culoarePvcRosu": "dimensiuniPvcRosu"
+            }
+        }
+    },
+    {
+        "step": "dimensiuniLemnMahon",
+        "stepTitle": "Selectati o dimensiune pentru fereastra",
+        "stepData": {
+            "dataName": "dimensiuniLemnMahon",
+            "dataType": "select",
+            "dataValues": [{
+                "label": "100x200",
+                "value": "100x200"
+            },{
+                "label": "200x200",
+                "value": "200x200"
+            }],
+            "nextStep": "finalStep"
+        }
+    },
+    {
+        "step": "dimensiuniLemnCires",
+        "stepTitle": "Selectati o dimensiune pentru fereastra",
+        "stepData": {
+            "dataName": "dimensiuniLemnCires",
+            "dataType": "select",
+            "dataValues": [{
+                "label": "100x200",
+                "value": "100x200"
+            },
+            {
+                "label": "150x200",
+                "value": "150x200"
+            },
+            {
+                "label": "200x200",
+                "value": "200x200"
+            }],
+            "nextStep": "finalStep"
+        }
+    },
+    {
+        "step": "dimensiuniPvcAlb",
+        "stepTitle": "Selectati o dimensiune pentru fereastra",
+        "stepData": {
+            "dataName": "dimensiuniPvcAlb",
+            "dataType": "select",
+            "dataValues": [{
+                "label": "100x200",
+                "value": "100x200"
+            },
+            {
+                "label": "150x200",
+                "value": "150x200"
+            },
+            {
+                "label": "200x200",
+                "value": "200x200"
+            }],
+            "nextStep": "finalStep"
+        }
+    },
+    {
+        "step": "dimensiuniPvcNegru",
+        "stepTitle": "Selectati o dimensiune pentru fereastra",
+        "stepData": {
+            "dataName": "dimensiuniPvcNegru",
+            "dataType": "select",
+            "dataValues": [{
+                "label": "100x200",
+                "value": "100x200"
+            },
+            {
+                "label": "150x200",
+                "value": "150x200"
+            },
+            {
+                "label": "200x200",
+                "value": "200x200"
+            }],
+            "nextStep": "finalStep"
+        }
+    },
+    {
+        "step": "dimensiuniPvcRosu",
+        "stepTitle": "Selectati o dimensiune pentru fereastra",
+        "stepData": {
+            "dataName": "dimensiuniPvcRosu",
+            "dataType": "select",
+            "dataValues": [{
+                "label": "100x200",
+                "value": "100x200"
+            },
+            {
+                "label": "150x200",
+                "value": "150x200"
+            },
+            {
+                "label": "200x200",
+                "value": "200x200"
+            }],
+            "nextStep": "finalStep"
+        }
+    },
+    {
+        "step": "finalStep",
+        "stepTitle": "Final step",
+        "stepData": {
+            "dataName": "finalStep"
+        }
+    }
+],
+"output": [
+
+]}
