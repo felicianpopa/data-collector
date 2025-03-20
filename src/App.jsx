@@ -1,5 +1,5 @@
 import "./App.less";
-import DataCollector from "./components/dataCollector/DataCollector";
+import DataCollector from "./components/DataCollector/DataCollector";
 
 function App() {
   return (
