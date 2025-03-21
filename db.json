@@ -1,263 +1,297 @@
 {
-    "quiz": {
-      "start": {
-        "id": "start",
-        "question": "Vreau să încep construcția casei!",
-        "type": "boolean",
-        "options": [
-          {
-            "text": "DA. Ce trebuie să fac?",
-            "value": true,
-            "nextId": "whatYouHave"
-          },
-          {
-            "text": "NU ÎNCĂ, dar vreau să mă informez",
-            "value": false,
-            "nextId": "challenges"
-          }
-        ]
-      },
-      "whatYouHave": {
-        "id": "whatYouHave",
-        "question": "Perfect! Bifează ce ai deja:",
-        "type": "multiSelect",
-        "options": [
-          {
-            "text": "Terenul",
-            "value": "land"
-          },
-          {
-            "text": "Planul arhitectural",
-            "value": "architecturalPlan"
-          },
-          {
-            "text": "Nimic. Inspiră-mă",
-            "value": "nothing"
-          }
-        ],
-        "nextId": "readyToTalk"
-      },
-      "challenges": {
-        "id": "challenges",
-        "question": "Ce provocări ai avut până acum?",
-        "type": "multiSelect",
-        "options": [
-          {
-            "text": "neîncrederea în constructori",
-            "value": "distrustBuilders"
-          },
-          {
-            "text": "timpul și energia necesare",
-            "value": "timeEnergy"
-          },
-          {
-            "text": "nu am găsit terenul",
-            "value": "noLand"
-          },
-          {
-            "text": "nu am știut de unde să încep și cum se va derula",
-            "value": "didntKnowHowToStart"
-          }
-        ],
-        "nextId": "whatToLearn"
-      },
-      "readyToTalk": {
-        "id": "readyToTalk",
-        "question": "Ești gata să vorbești cu un consultant Dimmer, pentru a afla tot ce te interesează?",
-        "type": "boolean",
-        "options": [
-          {
-            "text": "DA",
-            "value": true,
-            "nextId": "contactForm"
-          },
-          {
-            "text": "NU, continuă cu întrebările",
-            "value": false,
-            "nextId": "whatToLearn"
-          }
-        ]
-      },
-      "whatToLearn": {
-        "id": "whatToLearn",
-        "question": "Ce ai vrea să afli?",
-        "type": "singleSelect",
-        "options": [
-          {
-            "text": "De ce să aleg o casă pe structura din lemn",
-            "value": "whyWoodenHouse",
-            "nextId": "whyWoodenHouse"
-          },
-          {
-            "text": "Cât costă",
-            "value": "cost",
-            "nextId": "cost"
-          },
-          {
-            "text": "Caut un model de casă",
-            "value": "houseModel",
-            "nextId": "houseModel"
-          },
-          {
-            "text": "Caut un arhitect",
-            "value": "architect",
-            "nextId": "architect"
-          },
-          {
-            "text": "Care sunt pașii de la idee la cheie?",
-            "value": "steps",
-            "nextId": "steps"
-          }
-        ]
-      },
-      "whyWoodenHouse": {
-        "id": "whyWoodenHouse",
-        "type": "content",
-        "title": "De ce să aleg o casă pe structura din lemn",
-        "content": "Informații despre avantajele caselor pe structură din lemn",
-        "additionalActions": [
-          {
-            "text": "Portofoliu",
-            "action": "showPortfolio"
-          },
-          {
-            "text": "Formular de Contact",
-            "action": "showContactForm"
-          }
-        ]
-      },
-      "cost": {
-        "id": "cost",
-        "type": "content",
-        "title": "Cât costă",
-        "content": "Informații despre costurile unei case pe structură din lemn",
-        "additionalActions": [
-          {
-            "text": "Formular de Contact",
-            "action": "showContactForm"
-          }
-        ]
-      },
-      "houseModel": {
-        "id": "houseModel",
-        "type": "content",
-        "title": "Modele de case",
-        "content": "Gallerie cu modele de case disponibile",
-        "additionalActions": [
-          {
-            "text": "Portofoliu",
-            "action": "showPortfolio"
-          },
-          {
-            "text": "Formular de Contact",
-            "action": "showContactForm"
-          }
-        ]
-      },
-      "architect": {
-        "id": "architect",
-        "type": "content",
-        "title": "Arhitecți parteneri",
-        "content": "Informații despre arhitecții noștri parteneri și serviciile lor",
-        "additionalActions": [
-          {
-            "text": "Agenda",
-            "action": "showAgenda"
-          },
-          {
-            "text": "Formular de Contact",
-            "action": "showContactForm"
-          }
-        ]
-      },
-      "steps": {
-        "id": "steps",
-        "type": "content",
-        "title": "Pașii spre casa ta",
-        "content": "Explicarea pașilor de la idee la casă la cheie",
-        "additionalActions": [
-          {
-            "text": "Formular de Contact",
-            "action": "showContactForm"
-          }
-        ]
-      },
-      "contactForm": {
-        "id": "contactForm",
-        "type": "form",
-        "title": "Formular de Contact",
-        "fields": [
-          {
-            "name": "name",
-            "label": "Nume",
-            "type": "text",
-            "required": true
-          },
-          {
-            "name": "phone",
-            "label": "Telefon",
-            "type": "tel",
-            "required": true
-          },
-          {
-            "name": "email",
-            "label": "Email",
-            "type": "email",
-            "required": true
-          },
-          {
-            "name": "gdpr",
-            "label": "Sunt de acord cu prelucrarea datelor personale",
-            "type": "checkbox",
-            "required": true
-          }
-        ],
-        "submitText": "Trimite",
-        "successMessage": "Mulțumim! Te vom contacta în curând."
-      }
+  "quiz": {
+    "start": {
+      "id": "start",
+      "question": "Vreau să încep construcția casei!",
+      "type": "boolean",
+      "options": [
+        {
+          "text": "DA. Ce trebuie să fac?",
+          "value": true,
+          "nextId": "whatYouHave"
+        },
+        {
+          "text": "NU ÎNCĂ, dar vreau să mă informez",
+          "value": false,
+          "nextId": "challenges"
+        }
+      ]
     },
-    "actions": {
-      "showPortfolio": {
-        "type": "redirect",
-        "destination": "/portofoliu"
-      },
-      "showContactForm": {
-        "type": "showComponent",
-        "component": "contactForm"
-      },
-      "showAgenda": {
-        "type": "redirect",
-        "destination": "/agenda"
-      },
-      "newsletterSignup": {
-        "type": "showComponent",
-        "component": "newsletterForm"
-      },
-      "showFAQs": {
-        "type": "redirect",
-        "destination": "/faqs"
-      }
+    "whatYouHave": {
+      "id": "whatYouHave",
+      "question": "Perfect! Bifează ce ai deja:",
+      "type": "singleSelect",
+      "options": [
+        {
+          "text": "Terenul",
+          "value": "land",
+          "icon": "/icons/land.svg",
+          "nextId": "readyToTalk"
+        },
+        {
+          "text": "Planul arhitectural",
+          "value": "architecturalPlan",
+          "icon": "/icons/plan.svg",
+          "nextId": "readyToTalk"
+        },
+        {
+          "text": "Nimic. Inspiră-mă",
+          "value": "nothing",
+          "icon": "/icons/inspiration.svg",
+          "nextId": "ideas"
+        }
+      ]
     },
-    "additionalComponents": {
-      "newsletterForm": {
-        "type": "form",
-        "title": "Newsletter/PDF",
-        "fields": [
-          {
-            "name": "email",
-            "label": "Email",
-            "type": "email",
-            "required": true
-          },
-          {
-            "name": "gdpr",
-            "label": "Sunt de acord cu prelucrarea datelor personale",
-            "type": "checkbox",
-            "required": true
-          }
-        ],
-        "submitText": "Abonează-te",
-        "successMessage": "Mulțumim pentru abonare!"
-      }
+    "ideas": {
+      "id": "ideas",
+      "title": "Ai nevoie de câteva idei de unde să începi? Începe cu unul din link-urile de mai jos.",
+      "content": "Informații despre avantajele caselor pe structură din lemn",
+      "type": "content",
+      "additionalActions": [
+        {
+          "text": "Portofoliu",
+          "action": "link",
+          "url": "https://www.mydimmerhome.com/portofoliu/",
+          "new_tab": true
+        },
+        {
+          "text": "Formular de Contact",
+          "action": "link",
+          "url": "https://www.mydimmerhome.com/portofoliu/",
+          "new_tab": false
+        }
+      ]
+    },
+    "challenges": {
+      "id": "challenges",
+      "question": "Ce provocări ai avut până acum?",
+      "type": "multiSelect",
+      "options": [
+        {
+          "text": "neîncrederea în constructori",
+          "value": "distrustBuilders",
+          "icon": "/icons/builders.svg"
+        },
+        {
+          "text": "timpul și energia necesare",
+          "value": "timeEnergy",
+          "icon": "/icons/time.svg"
+        },
+        {
+          "text": "nu am găsit terenul",
+          "value": "noLand",
+          "icon": "/icons/no-land.svg"
+        },
+        {
+          "text": "nu am știut de unde să încep și cum se va derula",
+          "value": "didntKnowHowToStart",
+          "icon": "/icons/question.svg"
+        }
+      ],
+      "nextId": "whatToLearn"
+    },
+    "readyToTalk": {
+      "id": "readyToTalk",
+      "question": "Ești gata să vorbești cu un consultant Dimmer, pentru a afla tot ce te interesează?",
+      "type": "boolean",
+      "options": [
+        {
+          "text": "DA",
+          "value": true,
+          "nextId": "contactForm"
+        },
+        {
+          "text": "NU, continuă cu întrebările",
+          "value": false,
+          "nextId": "whatToLearn"
+        }
+      ]
+    },
+    "whatToLearn": {
+      "id": "whatToLearn",
+      "question": "Ce ai vrea să afli?",
+      "type": "singleSelect",
+      "options": [
+        {
+          "text": "De ce să aleg o casă pe structura din lemn",
+          "value": "whyWoodenHouse",
+          "icon": "/icons/wood.svg",
+          "nextId": "whyWoodenHouse"
+        },
+        {
+          "text": "Cât costă",
+          "value": "cost",
+          "icon": "/icons/money.svg",
+          "nextId": "cost"
+        },
+        {
+          "text": "Caut un model de casă",
+          "value": "houseModel",
+          "icon": "/icons/house-model.svg",
+          "nextId": "houseModel"
+        },
+        {
+          "text": "Caut un arhitect",
+          "value": "architect",
+          "icon": "/icons/architect.svg",
+          "nextId": "architect"
+        },
+        {
+          "text": "Care sunt pașii de la idee la cheie?",
+          "value": "steps",
+          "icon": "/icons/steps.svg",
+          "nextId": "steps"
+        }
+      ]
+    },
+    "whyWoodenHouse": {
+      "id": "whyWoodenHouse",
+      "type": "content",
+      "title": "De ce să aleg o casă pe structura din lemn",
+      "content": "Informații despre avantajele caselor pe structură din lemn",
+      "additionalActions": [
+        {
+          "text": "Portofoliu",
+          "action": "showPortfolio"
+        },
+        {
+          "text": "Formular de Contact",
+          "action": "showContactForm"
+        }
+      ]
+    },
+    "cost": {
+      "id": "cost",
+      "type": "content",
+      "title": "Cât costă",
+      "content": "Informații despre costurile unei case pe structură din lemn",
+      "additionalActions": [
+        {
+          "text": "Formular de Contact",
+          "action": "showContactForm"
+        }
+      ]
+    },
+    "houseModel": {
+      "id": "houseModel",
+      "type": "content",
+      "title": "Modele de case",
+      "content": "Gallerie cu modele de case disponibile",
+      "additionalActions": [
+        {
+          "text": "Portofoliu",
+          "action": "showPortfolio"
+        },
+        {
+          "text": "Formular de Contact",
+          "action": "showContactForm"
+        }
+      ]
+    },
+    "architect": {
+      "id": "architect",
+      "type": "content",
+      "title": "Arhitecți parteneri",
+      "content": "Informații despre arhitecții noștri parteneri și serviciile lor",
+      "additionalActions": [
+        {
+          "text": "Agenda",
+          "action": "showAgenda"
+        },
+        {
+          "text": "Formular de Contact",
+          "action": "showContactForm"
+        }
+      ]
+    },
+    "steps": {
+      "id": "steps",
+      "type": "content",
+      "title": "Pașii spre casa ta",
+      "content": "Explicarea pașilor de la idee la casă la cheie",
+      "additionalActions": [
+        {
+          "text": "Formular de Contact",
+          "action": "showContactForm"
+        }
+      ]
+    },
+    "contactForm": {
+      "id": "contactForm",
+      "type": "form",
+      "title": "Formular de Contact",
+      "fields": [
+        {
+          "name": "name",
+          "label": "Nume",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "phone",
+          "label": "Telefon",
+          "type": "tel",
+          "required": true
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "gdpr",
+          "label": "Sunt de acord cu prelucrarea datelor personale",
+          "type": "checkbox",
+          "required": true
+        }
+      ],
+      "submitText": "Trimite",
+      "successMessage": "Mulțumim! Te vom contacta în curând."
+    }
+  },
+  "actions": {
+    "showPortfolio": {
+      "type": "redirect",
+      "destination": "/portofoliu"
+    },
+    "showContactForm": {
+      "type": "showComponent",
+      "component": "contactForm"
+    },
+    "showAgenda": {
+      "type": "redirect",
+      "destination": "/agenda"
+    },
+    "newsletterSignup": {
+      "type": "showComponent",
+      "component": "newsletterForm"
+    },
+    "showFAQs": {
+      "type": "redirect",
+      "destination": "/faqs"
+    }
+  },
+  "additionalComponents": {
+    "newsletterForm": {
+      "type": "form",
+      "title": "Newsletter/PDF",
+      "fields": [
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "gdpr",
+          "label": "Sunt de acord cu prelucrarea datelor personale",
+          "type": "checkbox",
+          "required": true
+        }
+      ],
+      "submitText": "Abonează-te",
+      "successMessage": "Mulțumim pentru abonare!"
     }
   }
+}
